@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Batavia Rent Car | Rental Mobil Jakarta dengan Driver Profesional</title>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a2540">
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation & Swiper for testimonials -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="loader">
+        <div class="loader-car"><i class="fas fa-car"></i></div>
+        <div class="loader-text">Batavia Rent Car</div>
+        <div class="loader-dots"><span></span><span></span><span></span></div>
+    </div>
+</div>
+
+<!-- DARK MODE TOGGLE -->
+<button class="dark-toggle" id="darkToggle">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="id">🇮🇩 ID</button>
+    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+    <button class="lang-btn" data-lang="ar">🇸🇦 AR</button>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+    <div class="nav-container">
+        <div class="logo" data-aos="fade-right">
+            <div class="logo-icon">
+                <img src="image/logo.jpg" alt="Logo" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+            </div>
+            <div class="logo-text">
+                <h2>Batavia<span>RentCar</span></h2>
+                <p data-i18n="tagline">Premium Driver Service</p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
+            <li><a href="#services" class="nav-link" data-i18n="nav_services">Layanan</a></li>
+            <li><a href="#stats" class="nav-link" data-i18n="nav_stats">Statistik</a></li>
+            <li><a href="#cars" class="nav-link" data-i18n="nav_cars">Mobil</a></li>
+            <li><a href="#booking" class="nav-link" data-i18n="nav_booking">Booking</a></li>
+            <li><a href="#testimonials" class="nav-link" data-i18n="nav_testimonials">Ulasan</a></li>
+            <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- HERO SECTION with Parallax -->
+    <section id="home" class="hero-section">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-ports-of-a-city-at-night-41390-small.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content-center" data-aos="fade-up">
+            <h1>Batavia <span>Rent Car</span></h1>
+            <p data-i18n="hero_subtitle">Rental Mobil Jakarta dengan Driver Profesional | Aman, Nyaman, Terpercaya</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary pulse-animation"><i class="fas fa-calendar-check"></i> <span data-i18n="btn_booking">Pesan Sekarang</span></a>
+                <a href="#cars" class="btn-outline"><i class="fas fa-car"></i> <span data-i18n="btn_fleet">Lihat Armada</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION (NEW) -->
+    <section id="stats" class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-target="150">
+                    <i class="fas fa-car-side"></i>
+                    <div class="stat-number" data-num="150">0</div>
+                    <div class="stat-label" data-i18n="stat_cars">Mobil Tersedia</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100" data-target="5000">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-num="5000">0</div>
+                    <div class="stat-label" data-i18n="stat_customers">Pelanggan Puas</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200" data-target="5">
+                    <i class="fas fa-award"></i>
+                    <div class="stat-number" data-num="5">0</div>
+                    <div class="stat-label" data-i18n="stat_years">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300" data-target="24">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-number" data-num="24">0</div>
+                    <div class="stat-label" data-i18n="stat_support">Jam Dukungan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KAMI MELAYANI SECTION -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="services_tag">Layanan Kami</span>
+                <h2 class="section-title" data-i18n="services_title">Kami <span class="highlight">Melayani</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glassmorphism" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 data-i18n="service1_title">Antar Jemput Bandara</h3>
+                    <p data-i18n="service1_desc">Layanan antar jemput ke Bandara Soekarno-Hatta, Halim, dan bandara lainnya. Tepat waktu & profesional.</p>
+                </div>
+                <div class="service-card glassmorphism" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 data-i18n="service2_title">Perjalanan Dinas</h3>
+                    <p data-i18n="service2_desc">Solusi transportasi untuk perjalanan bisnis, meeting, dan keperluan kantor dengan driver profesional.</p>
+                </div>
+                <div class="service-card glassmorphism" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3 data-i18n="service3_title">Wisata & Liburan</h3>
+                    <p data-i18n="service3_desc">Nikmati liburan Anda dengan armada nyaman dan driver yang tahu tempat wisata terbaik di Jakarta.</p>
+                </div>
+                <div class="service-card glassmorphism" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3 data-i18n="service4_title">Acara Khusus</h3>
+                    <p data-i18n="service4_desc">Layanan untuk pernikahan, wisuda, dan acara khusus lainnya dengan armada premium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAFTAR MOBIL with Lightbox -->
+    <section id="cars" class="section cars-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="cars_tag">Armada Premium</span>
+                <h2 class="section-title" data-i18n="cars_title">Pilih <span class="highlight">Mobil Favorit</span> Anda</h2>
+            </div>
+            <div class="cars-grid" id="cars-grid"></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION (NEW) -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="testimonials_tag">Apa Kata Pelanggan</span>
+                <h2 class="section-title" data-i18n="testimonials_title">Ulasan <span class="highlight">Pelanggan</span></h2>
+            </div>
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper" id="testimonialSlider">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICELIST -->
+    <section id="pricelist" class="section pricelist-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="price_tag">Harga Sewa Mobil</span>
+                <h2 class="section-title" data-i18n="price_title">Sudah termasuk <span class="highlight">driver & BBM</span>, tanpa biaya tersembunyi</h2>
+            </div>
+            <div class="pricelist-grid" id="pricelist-grid"></div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (NEW) -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="faq_tag">Pertanyaan Umum</span>
+                <h2 class="section-title" data-i18n="faq_title">FAQ <span class="highlight">Populer</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-car"></i> Apakah ada opsi lepas kunci?<span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Tidak, semua layanan wajib dengan driver untuk kenyamanan dan keamanan.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-clock"></i> Bagaimana perhitungan overtime?<span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Rp 100.000/jam untuk melebihi durasi yang dipilih. Minimum 1 jam.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-money-bill-wave"></i> Apakah harga sudah termasuk BBM?<span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Ya, sudah termasuk BBM, driver, dan asuransi. Tol & parkir ditanggung sendiri.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-credit-card"></i> Bagaimana cara pembayaran?<span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Transfer DP 30% ke BCA a/n Sudarmi (detail di form), pelunasan saat penjemputan.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-baby-carriage"></i> Apakah ada baby seat?<span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Ya, tersedia baby seat/child seat Rp 50.000/hari. Cantumkan di catatan booking.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SISTEM BOOKING with Promo -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag" data-i18n="booking_tag">Booking Sekarang</span>
+                <h2 class="section-title" data-i18n="booking_title">Pesan <span class="highlight">Mobil</span> Dalam 3 Menit</h2>
+                <p class="section-subtitle" data-i18n="booking_subtitle">Isi form lengkap, upload bukti DP, dan booking akan kami proses</p>
+            </div>
+            
+            <div class="booking-wrapper glassmorphism" data-aos="fade-up">
+                <div class="booking-grid">
+                    <!-- Form Booking (Enhanced) -->
+                    <div class="form-box">
+                        <div class="form-header">
+                            <i class="fas fa-edit"></i>
+                            <h3 data-i18n="form_title">Form Pemesanan</h3>
+                        </div>
+                        
+                        <form id="bookingForm">
+                            <div class="input-group">
+                                <label><i class="fas fa-user"></i> <span data-i18n="label_name">Nama Lengkap</span> <span class="required">*</span></label>
+                                <input type="text" id="nama" placeholder="Contoh: Ahmad Fauzi" required>
+                                <div class="error-msg" id="error-nama"></div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label><i class="fab fa-whatsapp"></i> <span data-i18n="label_wa">Nomor WhatsApp</span> <span class="required">*</span></label>
+                                <input type="tel" id="wa" placeholder="08123456789" required>
+                                <div class="error-msg" id="error-wa"></div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label><i class="fas fa-car"></i> <span data-i18n="label_car">Pilih Mobil</span> <span class="required">*</span></label>
+                                <select id="mobilSelect" required></select>
+                                <div class="error-msg" id="error-mobil"></div>
+                            </div>
+                            
+                            <div class="row-2">
+                                <div class="input-group">
+                                    <label><i class="fas fa-calendar"></i> <span data-i18n="label_date">Tanggal Sewa</span> <span class="required">*</span></label>
+                                    <input type="date" id="tglSewa" required>
+                                    <div class="error-msg" id="error-tgl"></div>
+                                </div>
+                                <div class="input-group">
+                                    <label><i class="fas fa-clock"></i> <span data-i18n="label_time">Jam Penjemputan</span> <span class="required">*</span></label>
+                                    <input type="time" id="jamPenjemputan" required>
+                                    <div class="error-msg" id="error-jam"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="row-2">
+                                <div class="input-group">
+                                    <label><i class="fas fa-hourglass-half"></i> <span data-i18n="label_duration">Durasi</span> <span class="required">*</span></label>
+                                    <select id="durasiSelect" required>
+                                        <option value="6">6 Jam</option>
+                                        <option value="12" selected>12 Jam (paling populer)</option>
+                                        <option value="24">24 Jam (Harian)</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label><i class="fas fa-map-marker-alt"></i> <span data-i18n="label_pickup">Lokasi Penjemputan</span> <span class="required">*</span></label>
+                                    <input type="text" id="lokasiJemput" placeholder="Area Jakarta" required>
+                                    <div class="error-msg" id="error-lokasi"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label><i class="fas fa-flag-checkered"></i> <span data-i18n="label_destination">Tujuan Perjalanan</span> <span class="required">*</span></label>
+                                <input type="text" id="tujuan" placeholder="Contoh: Bandara Soekarno Hatta, PIK, dll" required>
+                                <div class="error-msg" id="error-tujuan"></div>
+                            </div>
+
+                            <!-- PROMO CODE (NEW) -->
+                            <div class="input-group">
+                                <label><i class="fas fa-percent"></i> Kode Promo <span>(Opsional)</span></label>
+                                <input type="text" id="promoCode" placeholder="Masukkan kode promo (contoh: DISKON10)" maxlength="20">
+                                <div class="promo-status" id="promoStatus"></div>
+                                <div class="error-msg" id="error-promo"></div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label><i class="fas fa-sticky-note"></i> <span data-i18n="label_notes">Catatan Tambahan</span></label>
+                                <textarea id="catatan" rows="2" placeholder="Contoh: Ada bagasi besar, butuh baby seat"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Summary (Enhanced) -->
+                    <div class="summary-box glassmorphism">
+                        <div class="summary-header">
+                            <i class="fas fa-calculator"></i>
+                            <h3 data-i18n="summary_title">Detail Harga & Pembayaran</h3>
+                        </div>
+                        
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <span class="label" data-i18n="summary_car">Mobil dipilih:</span>
+                                <span class="value" id="selectedCarName">- Pilih mobil -</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label" data-i18n="summary_duration">Durasi:</span>
+                                <span class="value" id="summaryDurasi">12 jam</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Promo:</span>
+                                <span class="value" id="promoDiscount">Rp 0</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item total">
+                                <span class="label" data-i18n="summary_total">Total Harga:</span>
+                                <span class="value price-highlight" id="totalHarga">Rp 0</span>
+                            </div>
+                            <div class="summary-item dp">
+                                <span class="label" data-i18n="summary_dp">DP (30%):</span>
+                                <span class="value" id="dpAmount">Rp 0</span>
+                            </div>
+                            <div class="summary-item sisa">
+                                <span class="label" data-i18n="summary_remaining">Sisa Pembayaran:</span>
+                                <span class="value" id="sisaBayar">Rp 0</span>
+                            </div>
+                            <!-- Existing info boxes unchanged -->
+                            <div class="info-box">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="info_overtime">⚠️ Overtime: Rp 100.000/jam (melebihi durasi)</span>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-toll"></i>
+                                <span data-i18n="info_exclude">💰 Harga belum termasuk tol & parkir</span>
+                            </div>
+                            <div class="info-box">
+                                <i class="fas fa-ban"></i>
+                                <span data-i18n="info_nokey">🚫 Tidak ada opsi lepas kunci (wajib dengan driver)</span>
+                            </div>
+                            
+                            <!-- Payment info unchanged -->
+                            <div class="payment-info">
+                                <h4><i class="fas fa-university"></i> <span data-i18n="payment_title">Metode Pembayaran</span></h4>
+                                <div class="bank-detail">
+                                    <p><strong>Bank BCA</strong></p>
+                                    <p data-i18n="payment_name">a/n: Sudarmi</p>
+                                    <p>No. Rek: 5215 2299 36</p>
+                                    <div class="warning-text">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <small data-i18n="payment_note">Booking diproses setelah pembayaran DP</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Upload unchanged -->
+                            <div class="upload-section">
+                                <label><i class="fas fa-upload"></i> <span data-i18n="upload_label">Upload Bukti Transfer DP</span> <span class="required">*</span></label>
+                                <div class="upload-area" id="uploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p data-i18n="upload_text">Klik untuk upload</p>
+                                    <small data-i18n="upload_format">Format: JPG, PNG (Max 2MB)</small>
+                                    <input type="file" id="buktiTransfer" accept="image/jpeg,image/png,image/jpg" hidden>
+                                </div>
+                                <div id="previewContainer" class="preview-container" style="display: none;">
+                                    <img id="previewImage" src="" alt="Preview">
+                                    <button type="button" id="removeImage" class="remove-btn"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="error-msg" id="error-upload"></div>
+                            </div>
+                            
+                            <button type="button" id="bookingWhatsappBtn" class="btn-primary btn-block btn-booking neon-glow">
+                                <i class="fab fa-whatsapp"></i> <span data-i18n="btn_confirm">Kirim Konfirmasi ke WhatsApp</span>
+                            </button>
+                            <p class="booking-note" data-i18n="booking_note">*Booking akan diproses setelah kami menerima bukti transfer DP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <i class="fas fa-headset"></i>
+                <h3 data-i18n="cta_title">Butuh Bantuan Cepat?</h3>
+                <p data-i18n="cta_desc">Hubungi tim kami sekarang untuk konsultasi gratis dan cek ketersediaan mobil</p>
+                <a href="https://wa.me/628581468000?text=Halo%20Batavia%20Rent%20Car%2C%20saya%20ingin%20konsultasi" class="btn-wa neon-glow" target="_blank">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="cta_btn">Chat WhatsApp Sekarang</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon"><i class="fas fa-crown"></i></div>
+                <div class="logo-text">
+                    <h2>Batavia<span>RentCar
+
+</span></h2>
+                    <p data-i18n="tagline">Premium Driver Service</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="contact_title">Hubungi Kami</h4>
+                <p><i class="fab fa-whatsapp"></i> +62 858-1414-6800</p>
+                <p><i class="fas fa-envelope"></i> info@bataviarentcar.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jakarta Pusat, Indonesia</p>
+                <p><i class="fas fa-clock"></i> 24 Jam / 7 Hari</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Batavia Rent Car. All rights reserved. | <span data-i18n="footer_powered">Powered by BLACKBOXAI</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- CAR LIGHTBOX MODAL (NEW) -->
+<div id="carModal" class="lightbox-modal">
+    <div class="lightbox-content">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-image" id="lightboxImage"></div>
+        <div class="lightbox-details">
+            <h3 id="lightboxTitle"></h3>
+            <div class="lightbox-price" id="lightboxPrice"></div>
+            <div class="lightbox-capacity" id="lightboxCapacity"></div>
+            <button class="btn-primary" id="lightboxBookBtn"><i class="fas fa-calendar-check"></i> Booking Mobil Ini</button>
+        </div>
+    </div>
+</div>
+
+<!-- STICKY WHATSAPP BUTTON -->
+<a href="https://wa.me/628581468000?text=Halo%20Batavia%20Rent%20Car" class="sticky-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="notification-dot"></span>
+</a>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="toast"><i class="fas fa-check-circle"></i><span id="toastMessage"></span></div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
