@@ -22,7 +22,8 @@ export default function Home() {
     '/12.jpg',
     '/13.jpg',
     '/14.jpg',
-    '/15.jpsg',
+    '/15.jpg',
+    '/16.jpg',
   ];
 
   return (
@@ -37,7 +38,7 @@ export default function Home() {
             fit={0.8}
             minRadius={600}
             maxVerticalRotationDeg={0}
-            segments={34}
+            segments={10}
             dragDampening={2}
             grayscale={false}
             autoRotationSpeed={0.1}
