@@ -38,7 +38,7 @@ export default function Home() {
             fit={0.8}
             minRadius={600}
             maxVerticalRotationDeg={0}
-            segments={20}
+            segments={25}
             dragDampening={2}
             grayscale={false}
             autoRotationSpeed={0.1}
