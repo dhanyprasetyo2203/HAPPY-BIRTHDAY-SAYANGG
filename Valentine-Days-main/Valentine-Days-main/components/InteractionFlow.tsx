@@ -13,13 +13,13 @@ const BackgroundHearts = () => {
 
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(10)].map((_, i) => ( // Reduced to 10 for better performance
+            {[...Array(10)].map((_, i) => (
                 <motion.div
                     key={i}
                     initial={{
                         opacity: 0,
                         y: '110vh',
-                        x: `${(i * 10) + Math.random() * 5}%`, // More deterministic distribution
+                        x: `${(i * 10) + Math.random() * 5}%`,
                         scale: 0.5
                     }}
                     animate={{
@@ -43,7 +43,7 @@ const BackgroundHearts = () => {
     );
 };
 
-// --- Step 1: Love Mode ---
+// --- Step 1: Birthday Mode ---
 const LoveModeStep = ({ onComplete }: { onComplete: () => void }) => {
     const [isOn, setIsOn] = useState(false);
 
@@ -76,13 +76,12 @@ const LoveModeStep = ({ onComplete }: { onComplete: () => void }) => {
 
                 <div className="flex flex-col items-center space-y-6">
                     <span className={`text-5xl font-playfair transition-colors duration-1000 ${isOn ? 'text-white' : 'text-white/40'}`}>
-                        birthday mode 
+                        Birthday mode
                     </span>
 
                     <button
                         onClick={() => setIsOn(!isOn)}
-                        className={`group relative w-32 h-16 rounded-full transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] p-1.5 focus:outline-none ${isOn ? 'bg-red-500 shadow-[0_0_30px_rgba(239,68,68,0.5)]' : 'bg-white/10'
-                            }`}
+                        className={`group relative w-32 h-16 rounded-full transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] p-1.5 focus:outline-none ${isOn ? 'bg-red-500 shadow-[0_0_30px_rgba(239,68,68,0.5)]' : 'bg-white/10'}`}
                     >
                         <motion.div
                             animate={{ x: isOn ? 64 : 0 }}
@@ -149,7 +148,6 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
         const emptyIndices = currentBoard.map((v, i) => v === null ? i : null).filter(v => v !== null) as number[];
         if (emptyIndices.length === 0) return;
 
-        // Extra Easy AI: Purposely avoid the center and pick random spots
         const nonCenterIndices = emptyIndices.filter(i => i !== 4);
         const targetIndex = nonCenterIndices.length > 0
             ? nonCenterIndices[Math.floor(Math.random() * nonCenterIndices.length)]
@@ -186,7 +184,7 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
     useEffect(() => {
         if (winner === 'X') {
             setMessage("Kamu Menang! 🎉");
-            setTimeout(() => onComplete(), 3500); // Increased timeout to wait for staggered animation
+            setTimeout(() => onComplete(), 3500);
         } else if (winner === 'O' || winner === 'draw') {
             setMessage(winner === 'draw' ? "Seri! Coba lagi yaa ❤️" : "Hampir! Sekali lagi...");
             setTimeout(() => {
@@ -205,7 +203,7 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
             className="flex flex-col items-center justify-center space-y-10 relative z-10"
         >
             <h2 className="text-4xl font-playfair text-white text-center drop-shadow-lg max-w-xs whitespace-pre-line leading-tight">
-                {winner === 'X' ? "Kamu Memenangkan" : message}
+                {winner === 'X' ? "Kamu Menang! 🎉" : message}
             </h2>
             <div className="grid grid-cols-3 gap-3 p-4 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
                 {board.map((square, i) => (
@@ -252,7 +250,7 @@ const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
     );
 };
 
-// --- Step 3: Love Meter ---
+// --- Step 3: Birthday Meter ---
 const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
     const [progress, setProgress] = useState(0);
 
@@ -270,7 +268,6 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
         return () => clearInterval(interval);
     }, [onComplete]);
 
-    // SVG parameters for the semi-circle
     const radius = 90;
     const circumference = Math.PI * radius;
     const dashOffset = circumference - (progress / 100) * circumference;
@@ -283,9 +280,7 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
             className="flex flex-col items-center justify-center space-y-12 w-full max-w-lg px-6 relative z-10"
         >
             <div className="relative w-full aspect-[2/1] flex flex-col items-center justify-end overflow-hidden">
-                {/* SVG Gauge */}
                 <svg viewBox="0 0 200 100" className="w-full h-full absolute top-0 overflow-visible">
-                    {/* Background Path (Gray) */}
                     <path
                         d="M 10,100 A 90,90 0 0 1 190,100"
                         fill="none"
@@ -293,7 +288,6 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
                         strokeWidth="12"
                         strokeLinecap="round"
                     />
-                    {/* Progress Path (Red) */}
                     <motion.path
                         d="M 10,100 A 90,90 0 0 1 190,100"
                         fill="none"
@@ -327,7 +321,6 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
                 </div>
             </div>
 
-            {/* Progress Bar for consistency */}
             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden border border-white/5">
                 <motion.div
                     className="h-full bg-gradient-to-r from-red-500 to-pink-500"
@@ -340,7 +333,7 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
 
 // --- Step 4: Typewriter ---
 const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
-    const text = "Happy Birthday, Sayang!! 🎂s";
+    const text = "Happy Birthday, Sayang!! 🎂";
     const [displayedText, setDisplayedText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
@@ -386,7 +379,6 @@ export default function InteractionFlow({ onFlowComplete }: { onFlowComplete: ()
 
     return (
         <div className="fixed inset-0 z-50 bg-[#060010] flex items-center justify-center overflow-hidden">
-            {/* Visual background layers */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.15)_0%,transparent_70%)]" />
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
 
@@ -407,7 +399,6 @@ export default function InteractionFlow({ onFlowComplete }: { onFlowComplete: ()
                 )}
             </AnimatePresence>
 
-            {/* Corner Glows */}
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-red-900/20 blur-[100px] rounded-full" />
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-900/20 blur-[100px] rounded-full" />
         </div>
